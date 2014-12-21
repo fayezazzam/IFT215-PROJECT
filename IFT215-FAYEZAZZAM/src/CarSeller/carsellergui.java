@@ -38,6 +38,9 @@ public class carsellergui extends javax.swing.JFrame {
         cbxEngine = new javax.swing.JComboBox();
         chxAC = new javax.swing.JCheckBox();
         btnSubmit = new javax.swing.JButton();
+        pnlCarprice = new javax.swing.JPanel();
+        lblPrice = new javax.swing.JLabel();
+        txtPrice = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -89,7 +92,7 @@ public class carsellergui extends javax.swing.JFrame {
                                 .addComponent(rbElectrical)
                                 .addGap(18, 18, 18)
                                 .addComponent(rbManual)))))
-                .addContainerGap(90, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlOptionsLayout.setVerticalGroup(
             pnlOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -114,13 +117,47 @@ public class carsellergui extends javax.swing.JFrame {
                 .addGap(35, 35, 35))
         );
 
+        pnlCarprice.setBorder(javax.swing.BorderFactory.createTitledBorder("Car price"));
+
+        lblPrice.setText("Price:");
+
+        txtPrice.setEditable(false);
+        txtPrice.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPriceActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnlCarpriceLayout = new javax.swing.GroupLayout(pnlCarprice);
+        pnlCarprice.setLayout(pnlCarpriceLayout);
+        pnlCarpriceLayout.setHorizontalGroup(
+            pnlCarpriceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCarpriceLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblPrice)
+                .addGap(18, 18, 18)
+                .addComponent(txtPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(25, Short.MAX_VALUE))
+        );
+        pnlCarpriceLayout.setVerticalGroup(
+            pnlCarpriceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCarpriceLayout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addGroup(pnlCarpriceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblPrice)
+                    .addComponent(txtPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(19, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(27, 27, 27)
-                .addComponent(pnlOptions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(pnlOptions, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(pnlCarprice, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(52, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -128,11 +165,17 @@ public class carsellergui extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(pnlOptions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(110, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addComponent(pnlCarprice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(57, 57, 57))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtPriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPriceActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPriceActionPerformed
 
     /**
      * @param args the command line arguments
@@ -174,12 +217,15 @@ public class carsellergui extends javax.swing.JFrame {
     private javax.swing.JComboBox cbxEngine;
     private javax.swing.JCheckBox chxAC;
     private javax.swing.JLabel lblEngine;
+    private javax.swing.JLabel lblPrice;
     private javax.swing.JLabel lblProductionyear;
     private javax.swing.JLabel lblWindows;
+    private javax.swing.JPanel pnlCarprice;
     private javax.swing.JPanel pnlOptions;
     private javax.swing.JRadioButton rbElectrical;
     private javax.swing.JRadioButton rbManual;
     private javax.swing.ButtonGroup rbgWindows;
+    private javax.swing.JTextField txtPrice;
     private javax.swing.JTextField txtProductionyear;
     // End of variables declaration//GEN-END:variables
 }
