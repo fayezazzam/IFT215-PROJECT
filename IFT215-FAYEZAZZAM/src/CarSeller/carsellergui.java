@@ -27,17 +27,108 @@ public class carsellergui extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        rbgWindows = new javax.swing.ButtonGroup();
+        pnlOptions = new javax.swing.JPanel();
+        lblProductionyear = new javax.swing.JLabel();
+        txtProductionyear = new javax.swing.JTextField();
+        lblWindows = new javax.swing.JLabel();
+        rbElectrical = new javax.swing.JRadioButton();
+        rbManual = new javax.swing.JRadioButton();
+        lblEngine = new javax.swing.JLabel();
+        cbxEngine = new javax.swing.JComboBox();
+        chxAC = new javax.swing.JCheckBox();
+        btnSubmit = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        pnlOptions.setBorder(javax.swing.BorderFactory.createTitledBorder("Options"));
+
+        lblProductionyear.setText("Production year:");
+
+        lblWindows.setText("Windows:");
+
+        rbgWindows.add(rbElectrical);
+        rbElectrical.setText("Electrical");
+
+        rbgWindows.add(rbManual);
+        rbManual.setText("Manual");
+
+        lblEngine.setText("Engine:");
+
+        cbxEngine.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Fuel", "Diesel", "Electrical" }));
+
+        chxAC.setText("AC");
+
+        btnSubmit.setText("Submit");
+
+        javax.swing.GroupLayout pnlOptionsLayout = new javax.swing.GroupLayout(pnlOptions);
+        pnlOptions.setLayout(pnlOptionsLayout);
+        pnlOptionsLayout.setHorizontalGroup(
+            pnlOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlOptionsLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlOptionsLayout.createSequentialGroup()
+                        .addGap(144, 144, 144)
+                        .addComponent(btnSubmit))
+                    .addGroup(pnlOptionsLayout.createSequentialGroup()
+                        .addComponent(lblProductionyear)
+                        .addGap(27, 27, 27)
+                        .addComponent(txtProductionyear, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlOptionsLayout.createSequentialGroup()
+                        .addGroup(pnlOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblWindows)
+                            .addComponent(lblEngine))
+                        .addGap(18, 18, 18)
+                        .addGroup(pnlOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlOptionsLayout.createSequentialGroup()
+                                .addComponent(cbxEngine, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(27, 27, 27)
+                                .addComponent(chxAC))
+                            .addGroup(pnlOptionsLayout.createSequentialGroup()
+                                .addComponent(rbElectrical)
+                                .addGap(18, 18, 18)
+                                .addComponent(rbManual)))))
+                .addContainerGap(90, Short.MAX_VALUE))
+        );
+        pnlOptionsLayout.setVerticalGroup(
+            pnlOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlOptionsLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblProductionyear)
+                    .addComponent(txtProductionyear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 6, Short.MAX_VALUE)
+                .addGroup(pnlOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblWindows)
+                    .addComponent(rbElectrical)
+                    .addComponent(rbManual))
+                .addGap(12, 12, 12)
+                .addGroup(pnlOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(lblEngine)
+                        .addComponent(cbxEngine, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(chxAC))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnSubmit)
+                .addGap(35, 35, 35))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(pnlOptions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(52, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(pnlOptions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(110, Short.MAX_VALUE))
         );
 
         pack();
@@ -79,5 +170,16 @@ public class carsellergui extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnSubmit;
+    private javax.swing.JComboBox cbxEngine;
+    private javax.swing.JCheckBox chxAC;
+    private javax.swing.JLabel lblEngine;
+    private javax.swing.JLabel lblProductionyear;
+    private javax.swing.JLabel lblWindows;
+    private javax.swing.JPanel pnlOptions;
+    private javax.swing.JRadioButton rbElectrical;
+    private javax.swing.JRadioButton rbManual;
+    private javax.swing.ButtonGroup rbgWindows;
+    private javax.swing.JTextField txtProductionyear;
     // End of variables declaration//GEN-END:variables
 }
