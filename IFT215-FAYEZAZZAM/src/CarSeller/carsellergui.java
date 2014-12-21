@@ -49,6 +49,12 @@ public class carsellergui extends javax.swing.JFrame {
 
         lblProductionyear.setText("Production year:");
 
+        txtProductionyear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtProductionyearActionPerformed(evt);
+            }
+        });
+
         lblWindows.setText("Windows:");
 
         rbgWindows.add(rbElectrical);
@@ -177,6 +183,10 @@ public class carsellergui extends javax.swing.JFrame {
     private void txtPriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPriceActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPriceActionPerformed
+
+    private void txtProductionyearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtProductionyearActionPerformed
+
+    }//GEN-LAST:event_txtProductionyearActionPerformed
 
     /**
      * @param args the command line arguments
