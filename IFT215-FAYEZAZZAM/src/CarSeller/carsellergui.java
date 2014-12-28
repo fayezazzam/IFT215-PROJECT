@@ -54,6 +54,11 @@ public class carsellergui extends javax.swing.JFrame {
                 txtProductionyearActionPerformed(evt);
             }
         });
+        txtProductionyear.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtProductionyearKeyReleased(evt);
+            }
+        });
 
         lblWindows.setText("Windows:");
 
@@ -187,6 +192,10 @@ public class carsellergui extends javax.swing.JFrame {
     private void txtProductionyearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtProductionyearActionPerformed
 
     }//GEN-LAST:event_txtProductionyearActionPerformed
+
+    private void txtProductionyearKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtProductionyearKeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtProductionyearKeyReleased
 
     /**
      * @param args the command line arguments
