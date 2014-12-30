@@ -54,6 +54,11 @@ public class carsellergui extends javax.swing.JFrame {
 
         lblProductionyear.setText("Production year:");
 
+        txtProductionyear.addContainerListener(new java.awt.event.ContainerAdapter() {
+            public void componentAdded(java.awt.event.ContainerEvent evt) {
+                txtProductionyearComponentAdded(evt);
+            }
+        });
         txtProductionyear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtProductionyearActionPerformed(evt);
@@ -62,6 +67,9 @@ public class carsellergui extends javax.swing.JFrame {
         txtProductionyear.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtProductionyearKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtProductionyearKeyTyped(evt);
             }
         });
 
@@ -211,20 +219,33 @@ public class carsellergui extends javax.swing.JFrame {
 
     private void txtProductionyearKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtProductionyearKeyReleased
         // TODO add your handling code here:
+       if(txtProductionyear.getText().trim().equals("2012")){
+           changeEngineValues(2012);
+       }else{if(txtProductionyear.getText().trim().equals("2013")){
+           changeEngineValues(2013);
+       }else{if(txtProductionyear.getText().trim().equals("2014")){
+           changeEngineValues(2014);
+       }else{if(txtProductionyear.getText().trim().equals("2015")){
+           changeEngineValues(2015);
+       }
+       }
+       }
+       }
     }//GEN-LAST:event_txtProductionyearKeyReleased
-
+    
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
     // TODO add your handling code here:
           if(txtProductionyear.getText().trim().equals("")){
-            JOptionPane.showMessageDialog(this, "Please enter Production Year","Waring",JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Please enter Production Year","Warning",JOptionPane.INFORMATION_MESSAGE);
           } else{
               int Windows;
-        
-            if(rbElectrical.isSelected()){
+              if(rbElectrical.isSelected()){
                 Windows=500;
             }else{
                 Windows=0;
             }
+            
+            
           int ProductionYear = 
                     Integer.parseInt(txtProductionyear.getText());
             boolean AC;
@@ -245,6 +266,14 @@ public class carsellergui extends javax.swing.JFrame {
     private void txtPriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPriceActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPriceActionPerformed
+
+    private void txtProductionyearComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_txtProductionyearComponentAdded
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtProductionyearComponentAdded
+
+    private void txtProductionyearKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtProductionyearKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtProductionyearKeyTyped
     private void changeEngineValues(int ProductionYear){
         
        cbxEngine.removeAllItems();
@@ -268,6 +297,7 @@ public class carsellergui extends javax.swing.JFrame {
                 cbxEngine.addItem("Electrical");
                 break;
         }
+       
     }
     /**
      * @param args the command line arguments
