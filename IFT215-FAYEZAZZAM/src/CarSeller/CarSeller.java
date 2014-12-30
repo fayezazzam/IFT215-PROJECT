@@ -2,12 +2,12 @@ package CarSeller;
 
 public class CarSeller {
     private int  ProductionYear;
-    private String Windows;
+    private int Windows;
     private boolean AC;
-    private String Engine;
+    private int Engine;
     
-      public CarSeller(int ProductionYear, String Windows, 
-            boolean AC, String Engine){
+      public CarSeller(int ProductionYear, int Windows, 
+            boolean AC, int Engine){
         this.ProductionYear=ProductionYear;
         this.Windows=Windows;
         this.AC=AC;
@@ -22,11 +22,11 @@ public class CarSeller {
         this.ProductionYear=ProductionYear;
     }
     
-    public String getWindows(){
+    public int getWindows(){
         return Windows;
     }
     
-    public void setWindows(String Windows){
+    public void setWindows(int Windows){
         this.Windows=Windows;
     }
     
@@ -38,11 +38,11 @@ public class CarSeller {
         this.AC=AC;
     }
     
-    public String getEngine(){
+    public int getEngine(){
         return Engine;
     }
     
-    public void setEngine(String Engine){
+    public void setEngine(int Engine){
         this.Engine=Engine;
     }
     public int getPrice(){

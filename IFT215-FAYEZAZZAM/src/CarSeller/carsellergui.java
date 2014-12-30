@@ -227,13 +227,12 @@ public class carsellergui extends javax.swing.JFrame {
             }
           int ProductionYear = 
                     Integer.parseInt(txtProductionyear.getText());
-          String Engine =cbxEngine.getName();
-          
             boolean AC;
             AC=chxAC.isSelected();
+              int Engine = 0;
               CarSeller cs = 
                 new CarSeller(ProductionYear,Windows,AC,Engine);
-        txtPrice.setText(cs.getPrice());
+        txtPrice.setText(Integer.toString(cs.getPrice()));
                 
                 
           }
