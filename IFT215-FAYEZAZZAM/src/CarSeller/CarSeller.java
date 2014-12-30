@@ -46,13 +46,13 @@ public class CarSeller {
         this.Engine=Engine;
     }
     public int getPrice(){
-        int Windowsprice, ACPrice,Fuel,Diesel,Electrical,Price;
-        
+        int Windowsprice, ACPrice,Fuel,Diesel,Electrical ,Price;
         switch(ProductionYear){
             case 2012:
                 ACPrice=1000;
                 Fuel=10000;
                 Diesel=9500;
+                Electrical=11500;
                 Windowsprice=500;
             break;
             case 2013:
@@ -85,10 +85,9 @@ public class CarSeller {
     if(AC==false){
             ACPrice=0;
         }
-    Price=ACPrice+Windows+Engine;
+    Price=ACPrice+Windows;
     
     return Price;
     }
-    
-    
+   
 } 

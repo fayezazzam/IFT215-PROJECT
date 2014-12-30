@@ -59,12 +59,20 @@ public class carsellergui extends javax.swing.JFrame {
                 txtProductionyearComponentAdded(evt);
             }
         });
+        txtProductionyear.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtProductionyearFocusLost(evt);
+            }
+        });
         txtProductionyear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtProductionyearActionPerformed(evt);
             }
         });
         txtProductionyear.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtProductionyearKeyPressed(evt);
+            }
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtProductionyearKeyReleased(evt);
             }
@@ -89,8 +97,18 @@ public class carsellergui extends javax.swing.JFrame {
         lblEngine.setText("Engine:");
 
         cbxEngine.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Fuel", "Diesel", "Electrical" }));
+        cbxEngine.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxEngineActionPerformed(evt);
+            }
+        });
 
         chxAC.setText("AC");
+        chxAC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chxACActionPerformed(evt);
+            }
+        });
 
         btnSubmit.setText("Submit");
         btnSubmit.addActionListener(new java.awt.event.ActionListener() {
@@ -219,7 +237,7 @@ public class carsellergui extends javax.swing.JFrame {
 
     private void txtProductionyearKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtProductionyearKeyReleased
         // TODO add your handling code here:
-       if(txtProductionyear.getText().trim().equals("2012")){
+      if(txtProductionyear.getText().trim().equals("2012")){
            changeEngineValues(2012);
        }else{if(txtProductionyear.getText().trim().equals("2013")){
            changeEngineValues(2013);
@@ -244,8 +262,6 @@ public class carsellergui extends javax.swing.JFrame {
             }else{
                 Windows=0;
             }
-            
-            
           int ProductionYear = 
                     Integer.parseInt(txtProductionyear.getText());
             boolean AC;
@@ -260,7 +276,7 @@ public class carsellergui extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSubmitActionPerformed
 
     private void rbElectricalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbElectricalActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here:   
     }//GEN-LAST:event_rbElectricalActionPerformed
 
     private void txtPriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPriceActionPerformed
@@ -273,7 +289,27 @@ public class carsellergui extends javax.swing.JFrame {
 
     private void txtProductionyearKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtProductionyearKeyTyped
         // TODO add your handling code here:
+        if(txtProductionyear.getText().length()>=4){
+           evt.consume();
+}
     }//GEN-LAST:event_txtProductionyearKeyTyped
+
+    private void txtProductionyearKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtProductionyearKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtProductionyearKeyPressed
+
+    private void cbxEngineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxEngineActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbxEngineActionPerformed
+
+    private void txtProductionyearFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtProductionyearFocusLost
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_txtProductionyearFocusLost
+
+    private void chxACActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chxACActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chxACActionPerformed
     private void changeEngineValues(int ProductionYear){
         
        cbxEngine.removeAllItems();
@@ -296,8 +332,7 @@ public class carsellergui extends javax.swing.JFrame {
                 cbxEngine.addItem("Diesel");
                 cbxEngine.addItem("Electrical");
                 break;
-        }
-       
+        }  
     }
     /**
      * @param args the command line arguments
