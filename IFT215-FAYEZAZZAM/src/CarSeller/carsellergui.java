@@ -242,18 +242,18 @@ public class carsellergui extends javax.swing.JFrame {
 
     private void txtProductionyearKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtProductionyearKeyReleased
         // TODO add your handling code here:
-      if(txtProductionyear.getText().trim().equals("2012")){
-           changeEngineValues(2012);
-       }else{if(txtProductionyear.getText().trim().equals("2013")){
-           changeEngineValues(2013);
-       }else{if(txtProductionyear.getText().trim().equals("2014")){
-           changeEngineValues(2014);
-       }else{if(txtProductionyear.getText().trim().equals("2015")){
-           changeEngineValues(2015);
-       }
-       }
-       }
-       }
+        if(txtProductionyear.getText().trim().equals("2012")){
+            changeEngineValues(2012);
+        }else{if(txtProductionyear.getText().trim().equals("2013")){
+            changeEngineValues(2013);
+        }else{if(txtProductionyear.getText().trim().equals("2014")){
+            changeEngineValues(2014);
+        }else{if(txtProductionyear.getText().trim().equals("2015")){
+            changeEngineValues(2015);
+        }
+        }
+        }
+        }
     }//GEN-LAST:event_txtProductionyearKeyReleased
     
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
@@ -267,11 +267,49 @@ public class carsellergui extends javax.swing.JFrame {
             }else{
                 Windows=0;
             }
+              int Productionyear=0;
+             
           int ProductionYear = 
                     Integer.parseInt(txtProductionyear.getText());
+          
+        int Fuel = 0,Diesel=0,Electrical=0 ,Engine=0,ACPrice=0;
+        switch(ProductionYear){
+            case 2012:
+                if(cbxEngine.getSelectedIndex()==Fuel){
+                    Engine=10000;
+                }else{
+                    Engine=9500;
+                }
+            break;
+            case 2013:
+              if(cbxEngine.getSelectedIndex()==Fuel){
+                    Engine=12000;
+                }else{
+                    Engine=11500;
+              }
+                break;
+            case 2014:
+                if(cbxEngine.getSelectedIndex()==Fuel){
+                    Engine=14000;
+                }else{if(cbxEngine.getSelectedIndex()==Diesel){
+                    Engine=13500;
+                }else
+                    Engine=15500;
+                
+                }
+                break;
+            case 2015:
+               if(cbxEngine.getSelectedIndex()==Fuel){
+                    Engine=17000;
+                }else{if(cbxEngine.getSelectedIndex()==Diesel){
+                    Engine=15500;
+                }else
+                    Engine=17500;
+                }
+        }
             boolean AC;
             AC=chxAC.isSelected();
-              int Engine = 0;
+              
               CarSeller cs = 
                 new CarSeller(ProductionYear,Windows,AC,Engine);
         txtPrice.setText(Integer.toString(cs.getPrice()));
@@ -296,7 +334,7 @@ public class carsellergui extends javax.swing.JFrame {
         // TODO add your handling code here:
         if(txtProductionyear.getText().length()>=4){
            evt.consume();
-}
+        }
     }//GEN-LAST:event_txtProductionyearKeyTyped
 
     private void txtProductionyearKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtProductionyearKeyPressed
@@ -309,6 +347,8 @@ public class carsellergui extends javax.swing.JFrame {
            chxAC.setVisible(false);
        }else
            chxAC.setVisible(true);
+           
+       
     }//GEN-LAST:event_cbxEngineActionPerformed
 
     private void txtProductionyearFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtProductionyearFocusLost
