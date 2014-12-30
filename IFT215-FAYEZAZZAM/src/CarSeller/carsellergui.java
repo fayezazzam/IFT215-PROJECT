@@ -97,6 +97,11 @@ public class carsellergui extends javax.swing.JFrame {
         lblEngine.setText("Engine:");
 
         cbxEngine.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Fuel", "Diesel", "Electrical" }));
+        cbxEngine.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cbxEngineItemStateChanged(evt);
+            }
+        });
         cbxEngine.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbxEngineActionPerformed(evt);
@@ -300,6 +305,10 @@ public class carsellergui extends javax.swing.JFrame {
 
     private void cbxEngineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxEngineActionPerformed
         // TODO add your handling code here:
+       if(cbxEngine.getSelectedItem()=="Electrical"){
+           chxAC.setVisible(false);
+       }else
+           chxAC.setVisible(true);
     }//GEN-LAST:event_cbxEngineActionPerformed
 
     private void txtProductionyearFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtProductionyearFocusLost
@@ -310,6 +319,10 @@ public class carsellergui extends javax.swing.JFrame {
     private void chxACActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chxACActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_chxACActionPerformed
+
+    private void cbxEngineItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbxEngineItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbxEngineItemStateChanged
     private void changeEngineValues(int ProductionYear){
         
        cbxEngine.removeAllItems();

@@ -74,19 +74,19 @@ public class CarSeller {
                 Diesel=15500;
                 Electrical= 17500;
                 ACPrice=1000;
+                Windowsprice=500;
                 break;
             default: 
                 ACPrice=0;
                 Fuel=0;
                 Diesel=0;
                 Electrical=0;
-                Windowsprice=500;
+                Windowsprice=0;
         }
     if(AC==false){
             ACPrice=0;
         }
-    Price=ACPrice+Windows;
-    
+    Price=ACPrice+Windows+Engine;
     return Price;
     }
    
