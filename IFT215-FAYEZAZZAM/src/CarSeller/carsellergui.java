@@ -5,6 +5,8 @@
  */
 package CarSeller;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Fayez
@@ -16,6 +18,9 @@ public class carsellergui extends javax.swing.JFrame {
      */
     public carsellergui() {
         initComponents();
+        this.setLocationRelativeTo(this);
+        rootPane.setDefaultButton(btnSubmit);
+        this.setTitle("Car Seller");
     }
 
     /**
@@ -64,6 +69,11 @@ public class carsellergui extends javax.swing.JFrame {
 
         rbgWindows.add(rbElectrical);
         rbElectrical.setText("Electrical");
+        rbElectrical.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbElectricalActionPerformed(evt);
+            }
+        });
 
         rbgWindows.add(rbManual);
         rbManual.setText("Manual");
@@ -75,6 +85,11 @@ public class carsellergui extends javax.swing.JFrame {
         chxAC.setText("AC");
 
         btnSubmit.setText("Submit");
+        btnSubmit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSubmitActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlOptionsLayout = new javax.swing.GroupLayout(pnlOptions);
         pnlOptions.setLayout(pnlOptionsLayout);
@@ -104,7 +119,7 @@ public class carsellergui extends javax.swing.JFrame {
                                 .addComponent(rbElectrical)
                                 .addGap(18, 18, 18)
                                 .addComponent(rbManual)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(90, Short.MAX_VALUE))
         );
         pnlOptionsLayout.setVerticalGroup(
             pnlOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -148,8 +163,8 @@ public class carsellergui extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(lblPrice)
                 .addGap(18, 18, 18)
-                .addComponent(txtPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addComponent(txtPrice)
+                .addContainerGap())
         );
         pnlCarpriceLayout.setVerticalGroup(
             pnlCarpriceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -158,7 +173,7 @@ public class carsellergui extends javax.swing.JFrame {
                 .addGroup(pnlCarpriceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblPrice)
                     .addComponent(txtPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -184,11 +199,12 @@ public class carsellergui extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void txtPriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPriceActionPerformed
+    private void rbBeirutStateChanged(javax.swing.event.ChangeEvent evt) {                                      
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtPriceActionPerformed
-
+        if(rbElectrical.isSelected()){
+           int windows = 500;
+        }
+    }
     private void txtProductionyearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtProductionyearActionPerformed
 
     }//GEN-LAST:event_txtProductionyearActionPerformed
@@ -197,6 +213,63 @@ public class carsellergui extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtProductionyearKeyReleased
 
+    private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
+    // TODO add your handling code here:
+          if(txtProductionyear.getText().trim().equals("")){
+            JOptionPane.showMessageDialog(this, "Please enter Production Year","Waring",JOptionPane.INFORMATION_MESSAGE);
+          } else{
+              int Windows;
+        
+            if(rbElectrical.isSelected()){
+                Windows=500;
+            }else{
+                Windows=0;
+            }
+          int ProductionYear = 
+                    Integer.parseInt(txtProductionyear.getText());
+          String Engine =cbxEngine.getName();
+          
+            boolean AC;
+            AC=chxAC.isSelected();
+              CarSeller cs = 
+                new CarSeller(ProductionYear,Windows,AC,Engine);
+        txtPrice.setText(cs.getPrice());
+                
+                
+          }
+    }//GEN-LAST:event_btnSubmitActionPerformed
+
+    private void rbElectricalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbElectricalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rbElectricalActionPerformed
+
+    private void txtPriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPriceActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPriceActionPerformed
+    private void changeEngineValues(int ProductionYear){
+        
+       cbxEngine.removeAllItems();
+       switch(ProductionYear){
+            case 2012:
+                cbxEngine.addItem("Fuel");
+                cbxEngine.addItem("Diesel");
+                break;
+            case 2013:
+                cbxEngine.addItem("Fuel");
+                cbxEngine.addItem("Diesel");
+                break;
+            case 2014:
+                cbxEngine.addItem("Fuel");
+                cbxEngine.addItem("Diesel");
+                cbxEngine.addItem("Electrical");
+                break;
+            default:
+                cbxEngine.addItem("Fuel");
+                cbxEngine.addItem("Diesel");
+                cbxEngine.addItem("Electrical");
+                break;
+        }
+    }
     /**
      * @param args the command line arguments
      */
