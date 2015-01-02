@@ -49,9 +49,9 @@ public class CarSeller {
         int Price,ACPrice;
     if(AC==true){
             ACPrice=1000;
-        }else 
+        }else{ 
         ACPrice=0;
-    
+    }
     Price=ACPrice+Windows+Engine;
     return Price;
     }
