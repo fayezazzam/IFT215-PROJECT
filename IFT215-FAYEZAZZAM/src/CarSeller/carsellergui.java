@@ -269,39 +269,37 @@ public class carsellergui extends javax.swing.JFrame {
         int Fuel = 0,Diesel=0,Electrical=0 ,Engine=0;
         switch(ProductionYear){
             case 2012:
-                if(cbxEngine.getSelectedIndex()==Fuel){
+                if(cbxEngine.getSelectedItem()=="Fuel"){
                     Engine=10000;
                 }else{
                     Engine=9500;
                 }
             break;
             case 2013:
-              if(cbxEngine.getSelectedIndex()==Fuel){
+              if(cbxEngine.getSelectedItem()=="Fuel"){
                     Engine=12000;
                 }else{
                     Engine=11500;
               }
                 break;
             case 2014:
-                if(cbxEngine.getSelectedIndex()==Fuel){
+               if(cbxEngine.getSelectedItem()=="Fuel"){
                     Engine=14000;
-                }else{if(cbxEngine.getSelectedIndex()==Diesel){
+                }else if(cbxEngine.getSelectedItem()=="Diesel"){
                     Engine=13500;
                 }else
                     Engine=15500;
-                }
+            
                 break;
             case 2015:
-               if(cbxEngine.getSelectedIndex()==Fuel){
+               if(cbxEngine.getSelectedItem()=="Fuel"){
                     Engine=17000;
-                }else{if(cbxEngine.getSelectedIndex()==Diesel){
+                }else if(cbxEngine.getSelectedItem()=="Diesel"){
                     Engine=15500;
                 }else
                     Engine=17500;
-                }
-            break;
+               break;
             default:
-                Engine=0;
                 JOptionPane.showMessageDialog(this, "Please enter a Year between 2012 and 2015","Warning",JOptionPane.INFORMATION_MESSAGE);
           
         }
@@ -316,7 +314,6 @@ public class carsellergui extends javax.swing.JFrame {
    
     private void rbElectricalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbElectricalActionPerformed
         // TODO add your handling code here:  
-        
     }//GEN-LAST:event_rbElectricalActionPerformed
 
     private void txtPriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPriceActionPerformed
