@@ -302,6 +302,8 @@ public class carsellergui extends javax.swing.JFrame {
             break;
             default:
                 Engine=0;
+                JOptionPane.showMessageDialog(this, "Please enter a Year between 2012 and 2015","Warning",JOptionPane.INFORMATION_MESSAGE);
+          
         }
             boolean AC;
             AC=chxAC.isSelected();
